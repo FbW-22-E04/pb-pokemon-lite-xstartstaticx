@@ -1,13 +1,44 @@
 /**
- * things to do still:
+ *                  things to do still:
+ * 0. ENEMY ATTACKS BACK RANDOMLY????
  * 1. when a pokemon is dead, they stay dead. || "you win, play again?"
+ * 2. save file? load file?
  * 2. if - max health > max health, return normal max health. (dont exceed max health, max magic?)
  * 3. after game over/you win - play again -comes, do you gain exp? do you gain levels? do you evolve after enough levels?
  * 4. make colors for pokemon name, another color for word status, hp, mp
  * pokemon attack etc.
  * 5. animate after everything else is done / when have spare time
+ * 6. optional, maybe have pokeballs and try to catch pokemon as well?
+ * 7. animate read out text in a line progressing by character, and after each line, hit "enter" to confirm, continue prompt
  *
  */
+//  Reset = "\x1b[0m"
+//  Bright = "\x1b[1m"
+//  Dim = "\x1b[2m"
+//  Underscore = "\x1b[4m"
+//  Blink = "\x1b[5m"
+//  Reverse = "\x1b[7m"
+//  Hidden = "\x1b[8m"
+
+//  FgBlack = "\x1b[30m"
+//  FgRed = "\x1b[31m"
+//  FgGreen = "\x1b[32m"
+//  FgYellow = "\x1b[33m"
+//  FgBlue = "\x1b[34m"
+//  FgMagenta = "\x1b[35m"
+//  FgCyan = "\x1b[36m"
+//  FgWhite = "\x1b[37m"
+
+//  BgBlack = "\x1b[40m"
+//  BgRed = "\x1b[41m"
+//  BgGreen = "\x1b[42m"
+//  BgYellow = "\x1b[43m"
+//  BgBlue = "\x1b[44m"
+//  BgMagenta = "\x1b[45m"
+//  BgCyan = "\x1b[46m"
+//  BgWhite = "\x1b[47m"
+//  console.log("\x1b[36m", "sometext", "\x1b[0m");
+
 class Pokemon {
   constructor(name, health, magic) {
     this.name = name;
@@ -22,7 +53,7 @@ class Pokemon {
 
   showStatus() {
     console.log(
-      `${this.name}'s status: \n HP: ${this.health} \n MP: ${this.magic}`
+      `\x1b[36m\x1b[1m\x1b[4m${this.name}'s \x1b[33mstatus:\x1b[0m \n \x1b[32m\x1b[1mHP:\x1b[0m ${this.health} \n \x1b[32m\x1b[1mMP:\x1b[0m ${this.magic}`
     );
   }
 
@@ -30,12 +61,12 @@ class Pokemon {
     if (this.magic >= this.skills[idx].magicRequired) {
       this.magic -= this.skills[idx].magicRequired;
       console.log(
-        `${this.name} used ${this.skills[idx].attackName} successfully!`
+        `\x1b[36m${this.name}\x1b[0m used \x1b[31m${this.skills[idx].attackName}\x1b[0m \x1b[32msuccessfully!\x1b[0m`
       );
       console.log("...");
       opponent.health -= this.skills[idx].attackDamage;
       console.log(
-        `${opponent.name} received ${this.skills[idx].attackDamage} damage!!`
+        `\x1b[31m${opponent.name} received ${this.skills[idx].attackDamage} damage!!\x1b[0m`
       );
       if (opponent.health <= 0) {
         console.log("...");
@@ -51,11 +82,11 @@ class Pokemon {
     this.magic += this.skills[idx].magicRecovered;
     opponent.health -= this.skills[idx].attackDamage;
     console.log(
-      `${this.name} used ${this.skills[idx].attackName} successfully!`
+      `\x1b[36m${this.name}\x1b[0m used \x1b[32m${this.skills[idx].attackName} successfully!\x1b[0m`
     );
     console.log("...");
     console.log(
-      `${this.name} recovered ${this.skills[idx].magicRecovered} MP!!`
+      `\x1b[36m${this.name}\x1b[0m \x1b[32mrecovered ${this.skills[idx].magicRecovered} MP!!\x1b[0m`
     );
     if (opponent.health <= 0) {
       console.log("...");
@@ -68,11 +99,11 @@ class Pokemon {
     this.health += this.skills[idx].healthRecovered;
     // opponent.health -= this.skills[idx].attackDamage;
     console.log(
-      `${this.name} used ${this.skills[idx].attackName} successfully!`
+      `\x1b[36m${this.name}\x1b[0m used \x1b[32m${this.skills[idx].attackName} successfully!\x1b[0m`
     );
     console.log("...");
     console.log(
-      `${this.name} recovered ${this.skills[idx].healthRecovered} HP!!`
+      `\x1b[36m${this.name}\x1b[0m \x1b[32mrecovered ${this.skills[idx].healthRecovered} HP!!\x1b[0m`
     );
     // if (opponent.health <= 0) {
     //   console.log("...");
