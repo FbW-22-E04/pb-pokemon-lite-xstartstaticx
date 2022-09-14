@@ -4,8 +4,6 @@
  * 1. when a pokemon is dead, they stay dead. || "you win, play again?"
  * 2. save file? load file?
  * 2. if - max health > max health, return normal max health. (dont exceed max health, max magic?)
- * 4. make colors for pokemon name, another color for word status, hp, mp
- * pokemon attack etc.
  * 5. animate after everything else is done / when have spare time
  * 7. animate read out text in a line progressing by character, and after each line, hit "enter" to confirm, continue prompt
  *
@@ -134,8 +132,8 @@ let hpRecover = new hpSkill("HP Recover", 0, 60);
 
 // pikachu
 let pikachu = new Pokemon("Pikachu", 100, 70);
-let spark = new AttackSkill("Spark", 20, 30);
-let thunderbolt = new AttackSkill("Thunderbolt", 50, 70);
+let spark = new AttackSkill("Spark", 30, 30);
+let thunderbolt = new AttackSkill("Thunderbolt", 50, 40);
 pikachu.learnAttackSkill(mpGrowl);
 pikachu.learnAttackSkill(hpHeal);
 pikachu.learnAttackSkill(spark);
@@ -156,7 +154,7 @@ bulbasaur.learnAttackSkill(solarBeam);
 
 // charmander
 let charmander = new Pokemon("Charmander", 110, 60);
-let ember = new AttackSkill("Ember", 20, 20);
+let ember = new AttackSkill("Ember", 40, 20);
 let flamethrower = new AttackSkill("Flamethrower", 40, 60);
 charmander.learnAttackSkill(mpTackle);
 charmander.learnAttackSkill(hpRecover);
@@ -167,8 +165,8 @@ charmander.learnAttackSkill(flamethrower);
 
 // squirtle
 let squirtle = new Pokemon("Squirtle", 100, 70);
-let waterGun = new AttackSkill("Water Gun", 20, 30);
-let hydroPump = new AttackSkill("Hydro Pump", 50, 70);
+let waterGun = new AttackSkill("Water Gun", 30, 30);
+let hydroPump = new AttackSkill("Hydro Pump", 50, 40);
 squirtle.learnAttackSkill(mpTackle);
 squirtle.learnAttackSkill(hpRecover);
 squirtle.learnAttackSkill(waterGun);
@@ -290,7 +288,31 @@ function playGame() {
             if (answer == 0) {
               console.log("You chose \x1b[32mMP Growl\x1b[0m \n");
               pikachu.getMagic(0);
+
+              console.log(" (\\__/)  .~    ~. ))");
+              console.log(" /O O  ./      .'");
+              console.log("{O__,   \\    {");
+              console.log("  / .  . )    \\");
+              console.log("  |-| '-' \\    }");
+              console.log(" .(   _(   )_.'");
+              console.log("'---.~_ _ _&");
+              console.log("");
+
               bulbasaur.getMagic(0);
+
+              console.log(" .             _.--._       /|");
+              console.log("        .    .'()..()`.    / /");
+              console.log("            ( `-.__.-' )  ( (    .");
+              console.log("   .         \\        /    \\ \\");
+              console.log("       .      \\      /      ) )        .");
+              console.log("            .' -.__.- `.-.-'_.'");
+              console.log(" .        .'  /-____-\\  `.-'       .");
+              console.log("          \\  /-.____.-\\  /-.");
+              console.log("           \\ \\`-.__.-'/ /\\|\\|           .");
+              console.log("          .'  `.    .'  `.");
+              console.log("          |/\\/\\|    |/\\/\\|");
+              console.log("");
+
               pikachu.showStatus();
               bulbasaur.showStatus();
               readLine.close();
@@ -300,7 +322,31 @@ function playGame() {
             if (answer == 1) {
               console.log("You chose \x1b[32mHP Heal\x1b[0m \n");
               pikachu.getHealth(1);
+
+              console.log(" (\\__/)  .~    ~. ))");
+              console.log(" /O O  ./      .'");
+              console.log("{O__,   \\    {");
+              console.log("  / .  . )    \\");
+              console.log("  |-| '-' \\    }");
+              console.log(" .(   _(   )_.'");
+              console.log("'---.~_ _ _&");
+              console.log("");
+
               bulbasaur.getMagic(0);
+
+              console.log(" .             _.--._       /|");
+              console.log("        .    .'()..()`.    / /");
+              console.log("            ( `-.__.-' )  ( (    .");
+              console.log("   .         \\        /    \\ \\");
+              console.log("       .      \\      /      ) )        .");
+              console.log("            .' -.__.- `.-.-'_.'");
+              console.log(" .        .'  /-____-\\  `.-'       .");
+              console.log("          \\  /-.____.-\\  /-.");
+              console.log("           \\ \\`-.__.-'/ /\\|\\|           .");
+              console.log("          .'  `.    .'  `.");
+              console.log("          |/\\/\\|    |/\\/\\|");
+              console.log("");
+
               pikachu.showStatus();
               bulbasaur.showStatus();
               readLine.close();
@@ -316,9 +362,35 @@ function playGame() {
                     pikachu.showStatus();
                     bulbasaur.showStatus();
                     pikachu.attack(2, bulbasaur);
+
+                    console.log(" (\\__/)  .~    ~. ))");
+                    console.log(" /O O  ./      .'");
+                    console.log("{O__,   \\    {");
+                    console.log("  / .  . )    \\");
+                    console.log("  |-| '-' \\    }");
+                    console.log(" .(   _(   )_.'");
+                    console.log("'---.~_ _ _&");
+                    console.log("");
+
                     if (bulbasaur.health > 0) {
                       bulbasaur.attack(2, pikachu);
                     }
+
+                    console.log(" .             _.--._       /|");
+                    console.log("        .    .'()..()`.    / /");
+                    console.log("            ( `-.__.-' )  ( (    .");
+                    console.log("   .         \\        /    \\ \\");
+                    console.log("       .      \\      /      ) )        .");
+                    console.log("            .' -.__.- `.-.-'_.'");
+                    console.log(" .        .'  /-____-\\  `.-'       .");
+                    console.log("          \\  /-.____.-\\  /-.");
+                    console.log(
+                      "           \\ \\`-.__.-'/ /\\|\\|           ."
+                    );
+                    console.log("          .'  `.    .'  `.");
+                    console.log("          |/\\/\\|    |/\\/\\|");
+                    console.log("");
+
                     pikachu.showStatus();
                     bulbasaur.showStatus();
                     if (pikachu.health <= 0) {
@@ -348,9 +420,35 @@ function playGame() {
                     pikachu.showStatus();
                     bulbasaur.showStatus();
                     pikachu.attack(3, bulbasaur);
+
+                    console.log(" (\\__/)  .~    ~. ))");
+                    console.log(" /O O  ./      .'");
+                    console.log("{O__,   \\    {");
+                    console.log("  / .  . )    \\");
+                    console.log("  |-| '-' \\    }");
+                    console.log(" .(   _(   )_.'");
+                    console.log("'---.~_ _ _&");
+                    console.log("");
+
                     if (bulbasaur.health > 0) {
                       bulbasaur.getHealth(1);
                     }
+
+                    console.log(" .             _.--._       /|");
+                    console.log("        .    .'()..()`.    / /");
+                    console.log("            ( `-.__.-' )  ( (    .");
+                    console.log("   .         \\        /    \\ \\");
+                    console.log("       .      \\      /      ) )        .");
+                    console.log("            .' -.__.- `.-.-'_.'");
+                    console.log(" .        .'  /-____-\\  `.-'       .");
+                    console.log("          \\  /-.____.-\\  /-.");
+                    console.log(
+                      "           \\ \\`-.__.-'/ /\\|\\|           ."
+                    );
+                    console.log("          .'  `.    .'  `.");
+                    console.log("          |/\\/\\|    |/\\/\\|");
+                    console.log("");
+
                     pikachu.showStatus();
                     bulbasaur.showStatus();
                     if (pikachu.health <= 0) {
@@ -475,7 +573,33 @@ function playGame() {
             if (answer == 0) {
               console.log("You chose \x1b[32mMP Tackle\x1b[0m \n");
               squirtle.getMagic(0);
+
+              console.log("                    __");
+              console.log("         .,-;-;-,. /'_\\");
+              console.log("       _/_/_/_|_\\_\\) /");
+              console.log("     '-<_><_><_><_>=/\\");
+              console.log("       `/_/====/_/-'\\_\\");
+              console.log(`        ""     ""    ""
+              `);
+              console.log("");
+
               charmander.getMagic(0);
+
+              console.log("       __");
+              console.log("      /oo\\");
+              console.log("     |    |");
+              console.log(" ^^  (vvvv)   ^^");
+              console.log(" \\\\  /\\__/\\  //");
+              console.log("  \\\\/      \\//");
+              console.log("   /        \\  ");
+              console.log("  |          |    ^ ");
+              console.log("  /          \\___/  \\ ");
+              console.log(" (            )     |");
+              console.log("  \\----------/     /");
+              console.log("    //    \\\\_____/");
+              console.log("   W       W");
+              console.log("");
+
               squirtle.showStatus();
               charmander.showStatus();
               readLine.close();
@@ -484,7 +608,33 @@ function playGame() {
             if (answer == 1) {
               console.log("You chose \x1b[32mHP Recover\x1b[0m \n");
               squirtle.getHealth(1);
+
+              console.log("                    __");
+              console.log("         .,-;-;-,. /'_\\");
+              console.log("       _/_/_/_|_\\_\\) /");
+              console.log("     '-<_><_><_><_>=/\\");
+              console.log("       `/_/====/_/-'\\_\\");
+              console.log(`        ""     ""    ""
+              `);
+              console.log("");
+
               charmander.getMagic(0);
+
+              console.log("       __");
+              console.log("      /oo\\");
+              console.log("     |    |");
+              console.log(" ^^  (vvvv)   ^^");
+              console.log(" \\\\  /\\__/\\  //");
+              console.log("  \\\\/      \\//");
+              console.log("   /        \\  ");
+              console.log("  |          |    ^ ");
+              console.log("  /          \\___/  \\ ");
+              console.log(" (            )     |");
+              console.log("  \\----------/     /");
+              console.log("    //    \\\\_____/");
+              console.log("   W       W");
+              console.log("");
+
               squirtle.showStatus();
               charmander.showStatus();
               readLine.close();
@@ -503,13 +653,40 @@ function playGame() {
                     squirtle.showStatus();
                     charmander.showStatus();
                     squirtle.attack(2, charmander);
+
+                    console.log("                    __");
+                    console.log("         .,-;-;-,. /'_\\");
+                    console.log("       _/_/_/_|_\\_\\) /");
+                    console.log("     '-<_><_><_><_>=/\\");
+                    console.log("       `/_/====/_/-'\\_\\");
+                    console.log(`        ""     ""    ""
+                    `);
+                    console.log("");
+
                     if (charmander.health > 0) {
                       charmander.attack(2, squirtle);
                     }
+
+                    console.log("       __");
+                    console.log("      /oo\\");
+                    console.log("     |    |");
+                    console.log(" ^^  (vvvv)   ^^");
+                    console.log(" \\\\  /\\__/\\  //");
+                    console.log("  \\\\/      \\//");
+                    console.log("   /        \\  ");
+                    console.log("  |          |    ^ ");
+                    console.log("  /          \\___/  \\ ");
+                    console.log(" (            )     |");
+                    console.log("  \\----------/     /");
+                    console.log("    //    \\\\_____/");
+                    console.log("   W       W");
+                    console.log("");
+
                     squirtle.showStatus();
                     charmander.showStatus();
                     if (squirtle.health <= 0) {
-                      console.log("LOSER!");
+                      // console.log("LOSER!");
+                      loser();
                     } else if (charmander.health <= 0) {
                       console.log("YOU WIN!");
                     } else {
@@ -533,9 +710,35 @@ function playGame() {
                     squirtle.showStatus();
                     charmander.showStatus();
                     squirtle.attack(3, charmander);
+
+                    console.log("                    __");
+                    console.log("         .,-;-;-,. /'_\\");
+                    console.log("       _/_/_/_|_\\_\\) /");
+                    console.log("     '-<_><_><_><_>=/\\");
+                    console.log("       `/_/====/_/-'\\_\\");
+                    console.log(`        ""     ""    ""
+                    `);
+                    console.log("");
+
                     if (charmander.health > 0) {
                       charmander.getHealth(1);
                     }
+
+                    console.log("       __");
+                    console.log("      /oo\\");
+                    console.log("     |    |");
+                    console.log(" ^^  (vvvv)   ^^");
+                    console.log(" \\\\  /\\__/\\  //");
+                    console.log("  \\\\/      \\//");
+                    console.log("   /        \\  ");
+                    console.log("  |          |    ^ ");
+                    console.log("  /          \\___/  \\ ");
+                    console.log(" (            )     |");
+                    console.log("  \\----------/     /");
+                    console.log("    //    \\\\_____/");
+                    console.log("   W       W");
+                    console.log("");
+
                     squirtle.showStatus();
                     charmander.showStatus();
                     if (squirtle.health <= 0) {
@@ -644,3 +847,22 @@ function playGame() {
   );
 }
 playGame();
+
+function loser() {
+  setTimeout(() => {}, 40);
+  let spaces = "";
+
+  let counter = 1;
+  let animation = setInterval(() => {
+    console.clear();
+    const i = counter % 3;
+
+    console.log(
+      `${spaces} 88 \n${spaces} 88 \n${spaces} 88 \n${spaces} 88  ,adPPYba,  ,adPPYba,  ,adPPYba, 8b,dPPYba, \n${spaces} 88 a8"     "8a I8[    "" a8P_____88 88P'   "Y8 \n${spaces} 88 8b       d8  '"Y8ba,  8PP""""""" 88 \n${spaces} 88 "8a,   ,a8" aa    ]8I "8b,   ,aa 88 \n${spaces} 88  '"YbbdP"'  '"YbbdP"'  '"Ybbd8"' 88`
+    );
+
+    spaces += " ";
+    counter++;
+    if (spaces.length > 50) spaces = "";
+  }, 150);
+}
